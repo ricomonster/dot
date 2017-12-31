@@ -31,10 +31,10 @@ source ~/.vim/plugin/ctrlp
 Plugin 'airblade/vim-gitgutter'
 
 " Nord
-" Plugin 'arcticicestudio/nord-vim'
+Plugin 'arcticicestudio/nord-vim'
 
 " Palenight.vim
-Plugin 'drewtempelmeyer/palenight.vim'
+" Plugin 'drewtempelmeyer/palenight.vim'
 
 " Vim Airline
 Plugin 'vim-airline/vim-airline'
@@ -59,8 +59,8 @@ Plugin 'editorconfig/editorconfig-vim'
 " NERD Commenter
 Plugin 'scrooloose/nerdcommenter'
 
-" Doorboy
-Plugin 'itmammoth/doorboy.vim'
+" Auto Pairs
+Plugin 'jiangmiao/auto-pairs'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -87,8 +87,7 @@ set backspace=indent,eol,start
 
 " Custom Padilla
 set background=dark
-" colorscheme nord
-colorscheme palenight
+colorscheme nord
 
 " Transparency
 " set transparency=10
