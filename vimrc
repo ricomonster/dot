@@ -34,7 +34,10 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'arcticicestudio/nord-vim'
 
 " Palenight.vim
-" Plugin 'drewtempelmeyer/palenight.vim'
+Plugin 'drewtempelmeyer/palenight.vim'
+
+" Dracula
+Plugin 'dracula/vim'
 
 " Vim Airline
 Plugin 'vim-airline/vim-airline'
@@ -62,6 +65,9 @@ Plugin 'scrooloose/nerdcommenter'
 " Auto Pairs
 Plugin 'jiangmiao/auto-pairs'
 
+" Closetag.vim
+Plugin 'alvan/vim-closetag'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -87,7 +93,9 @@ set backspace=indent,eol,start
 
 " Custom Padilla
 set background=dark
-colorscheme nord
+" colorscheme nord
+" colorscheme palenight
+colorscheme dracula
 
 " Transparency
 " set transparency=10
@@ -101,7 +109,9 @@ filetype plugin indent on
 set guicursor=a:hor10-Cursor
 " set guifont=Roboto\ Mono:h12
 set guifont=Meslo\ LG\ M:h12
-set linespace=3
+" set guifont=SF\ Mono:h12
+
+set linespace=2
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -128,6 +138,8 @@ set smartcase
 set listchars=space:·
 set list
 
+set foldmethod=indent
+
 " remap
 vmap <Tab> >gv
 vmap <S-Tab> <gv
@@ -152,3 +164,9 @@ fun! s:MyNERDTreeSetting()
 endfun
 
 autocmd WinEnter * if &ft == 'nerdtree' | call s:MyNERDTreeSetting() | endif
+
+" Keep all folds open when a file is opened
+augroup OpenAllFoldsOnFileOpen
+    autocmd!
+    autocmd BufRead * normal zR
+augroup END
