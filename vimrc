@@ -30,14 +30,26 @@ source ~/.vim/plugin/ctrlp
 " Vim-GitGutter
 Plugin 'airblade/vim-gitgutter'
 
-" Nord
-Plugin 'arcticicestudio/nord-vim'
+" Spacegray
+Plugin 'ajh17/Spacegray.vim'
 
-" Palenight.vim
-Plugin 'drewtempelmeyer/palenight.vim'
+" Vim One
+" Plugin 'rakr/vim-one'
 
-" Dracula
-Plugin 'dracula/vim'
+" Paramount
+" Plugin 'owickstrom/vim-colors-paramount'
+
+" Eink.vim
+Plugin 'clinstid/eink.vim'
+
+" Badwolf
+Plugin 'sjl/badwolf'
+
+" Skull Vim
+Plugin 'beigebrucewayne/skull-vim'
+
+" Vim Moonscape
+Plugin 'Drogglbecher/vim-moonscape'
 
 " Vim Airline
 Plugin 'vim-airline/vim-airline'
@@ -93,15 +105,27 @@ set backspace=indent,eol,start
 
 " Custom Padilla
 set background=dark
+set t_Co=256
+
 " colorscheme nord
 " colorscheme palenight
-colorscheme dracula
+" colorscheme dracula
+" colorscheme spacegray
+" let g:spacegray_underline_search = 1
+" let g:spacegray_low_contrast = 1
+
+colorscheme skull
+
+" colorscheme one
+" let g:one_allow_italics=1
 
 " Transparency
-" set transparency=10
+if has("gui_macvim")
+    set transparency=2
+endif
 
 " Syntax Highlighting
-syntax enable
+syntax on
 
 " File Type Detection
 filetype plugin indent on
