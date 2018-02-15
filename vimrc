@@ -40,16 +40,22 @@ Plugin 'ajh17/Spacegray.vim'
 " Plugin 'owickstrom/vim-colors-paramount'
 
 " Eink.vim
-Plugin 'clinstid/eink.vim'
+" Plugin 'clinstid/eink.vim'
 
 " Badwolf
-Plugin 'sjl/badwolf'
+" Plugin 'sjl/badwolf'
 
 " Skull Vim
-Plugin 'beigebrucewayne/skull-vim'
+"Plugin 'beigebrucewayne/skull-vim'
 
 " Vim Moonscape
-Plugin 'Drogglbecher/vim-moonscape'
+" Plugin 'Drogglbecher/vim-moonscape'
+
+" True Monochrome
+" Plugin 'ryanpcmcquen/true-monochrome_vim'
+
+" Blame
+Plugin 'hauleth/blame.vim'
 
 " Vim Airline
 Plugin 'vim-airline/vim-airline'
@@ -74,11 +80,20 @@ Plugin 'editorconfig/editorconfig-vim'
 " NERD Commenter
 Plugin 'scrooloose/nerdcommenter'
 
+" Autoclose
+Plugin 'spf13/vim-autoclose'
+let g:autoclose_vim_commentmode = 1
+
 " Auto Pairs
-Plugin 'jiangmiao/auto-pairs'
+" Plugin 'jiangmiao/auto-pairs'
 
 " Closetag.vim
-Plugin 'alvan/vim-closetag'
+" Plugin 'alvan/vim-closetag'
+
+" Language-based Plugins
+" JS/JSX
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -114,7 +129,7 @@ set t_Co=256
 " let g:spacegray_underline_search = 1
 " let g:spacegray_low_contrast = 1
 
-colorscheme skull
+" colorscheme skull
 
 " colorscheme one
 " let g:one_allow_italics=1
@@ -122,6 +137,7 @@ colorscheme skull
 " Transparency
 if has("gui_macvim")
     set transparency=2
+    colorscheme blame
 endif
 
 " Syntax Highlighting
@@ -135,7 +151,7 @@ set guicursor=a:hor10-Cursor
 set guifont=Meslo\ LG\ M:h12
 " set guifont=SF\ Mono:h12
 
-set linespace=2
+set linespace=1
 set tabstop=4
 set shiftwidth=4
 set expandtab
