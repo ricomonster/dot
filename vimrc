@@ -30,11 +30,12 @@ source ~/.vim/plugin/ctrlp
 " Vim-GitGutter
 Plugin 'airblade/vim-gitgutter'
 
+" START: Colorschemes
 " Spacegray
-Plugin 'ajh17/Spacegray.vim'
+" Plugin 'ajh17/Spacegray.vim'
 
 " Vim One
-" Plugin 'rakr/vim-one'
+Plugin 'rakr/vim-one'
 
 " Paramount
 " Plugin 'owickstrom/vim-colors-paramount'
@@ -55,7 +56,12 @@ Plugin 'ajh17/Spacegray.vim'
 " Plugin 'ryanpcmcquen/true-monochrome_vim'
 
 " Blame
-Plugin 'hauleth/blame.vim'
+" Plugin 'hauleth/blame.vim'
+
+" Dracula
+" Plugin 'dracula/vim'
+
+" END: Colorschemes
 
 " Vim Airline
 Plugin 'vim-airline/vim-airline'
@@ -88,7 +94,30 @@ let g:autoclose_vim_commentmode = 1
 " Plugin 'jiangmiao/auto-pairs'
 
 " Closetag.vim
-" Plugin 'alvan/vim-closetag'
+Plugin 'alvan/vim-closetag'
+
+" filenames like *.xml, *.html, *.xhtml, ...
+" Then after you press > in these files, this plugin will try to close the current tag.
+"
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.js'
+
+" filenames like *.xml, *.xhtml, ...
+" This will make the list of non closing tags self closing in the specified files.
+"
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.js'
+
+" integer value [0|1]
+" This will make the list of non closing tags case sensitive (e.g. `<Link>` will be closed while `<link>` won't.)
+"
+let g:closetag_emptyTags_caseSensitive = 1
+
+" Shortcut for closing tags, default is '>'
+"
+let g:closetag_shortcut = '>'
+
+" Add > at current position without closing the current tag, default is ''
+"
+let g:closetag_close_shortcut = '<leader>>'
 
 " Language-based Plugins
 " JS/JSX
@@ -132,12 +161,13 @@ set t_Co=256
 " colorscheme skull
 
 " colorscheme one
+let g:airline_theme='one'
 " let g:one_allow_italics=1
 
 " Transparency
 if has("gui_macvim")
     set transparency=2
-    colorscheme blame
+    colorscheme one
 endif
 
 " Syntax Highlighting
@@ -148,10 +178,11 @@ filetype plugin indent on
 
 set guicursor=a:hor10-Cursor
 " set guifont=Roboto\ Mono:h12
-set guifont=Meslo\ LG\ M:h12
+set guifont=Meslo\ LG\ S:h12
 " set guifont=SF\ Mono:h12
+" set guifont=Monaco:h11
 
-set linespace=1
+set linespace=0
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -187,6 +218,7 @@ vmap <S-Tab> <gv
 " removes the trailing whitespaces on save
 autocmd BufWritePre * :%s/\s\+$//e
 
+" Opens up NERDTree on startup
 let g:nerdtree_tabs_open_on_gui_startup=2
 
 " Custom functionality so we can files in new a tab
